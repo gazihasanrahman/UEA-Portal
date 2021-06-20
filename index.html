@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/uikit.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="img/icon.png">
+  <title>My Dashboard</title>
+</head>
+<body>
+
+
+ <!-- Navigation -->
+ <nav class="navbar navbar-dark navbar-expand-md" uk-sticky="top: 200; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+   <div class="container">
+     <a href="index.html" class="navbar-brand font-weight-bold"><img src="img/logo.png" class="img-fluid w-25" alt="UEA Logo"> MY UEA</a>
+     <div class="nav-item py-1">
+         <div class="input-group">
+          <form class="form-inline">
+              <input class="form-control " type="text" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+     </div>
+     <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div id="navbarNav" class="collapse navbar-collapse">
+       <ul class="navbar-nav ml-auto">
+         <li class="nav-item active">
+           <a class="nav-link" href="index.html">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="myschool.html">My School</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="covid19.html">COVID-19</a>
+         </li>
+
+        <!-- Navbar dropdown -->
+         <li class="nav-item dropdown">
+           <a href="javascript:void(0)" class="nav-link dropdown-toggle"  data-toggle="dropdown"
+           role="button"
+           aria-expanded="false">Accessibility<span class="caret"></span>
+         </a>
+           <ul class="dropdown-menu" role="menu">
+
+            <li>
+            <div class="dropdown-item">
+            <a class="btn"><i class="fa fa-search-minus"></i></a>
+            <a class="btn">Zoom</a>
+            <a class="btn"><i class="fa fa-search-plus"></i></a>
+            </div>
+            </li>
+
+             <li><a class="dropdown-item" href="#">Dark theme  <i class="fa fa-toggle-off mt-2 pull-right"></i></a></li>
+             <li><hr class="dropdown-divider" /></li>
+             <li><a class="dropdown-item" data-toggle="modal" data-target="#Modal1">Language <i class="fa fa-language mt-2 pull-right"></i></a></li>
+             <li><a class="dropdown-item" href="#">Recite<i class="fa fa-volume-up mt-2 pull-right"></i></a></li>
+             <li><a class="dropdown-item" data-toggle="modal" data-target="#Modal2">Change font <i class="fa fa-font mt-2 pull-right"></i></a></li>
+           </ul>
+         </li>
+
+
+
+         <li class="dropdown order-1">
+           <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary"><h4><i class="fa fa-user-circle"></i></h4> <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right mt-1">
+                       <li class="px-3 ">
+                           <form class="form" role="form">
+                                <div class="form-group">
+                                    <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-dark btn-block">Login</button>
+                                </div>
+                                <div class="form-group text-center">
+                                    <small><a href="#" class="text-dark">Forgot password?</a></small>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+
+       </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Select your Language</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark"><i class="fa fa-check" aria-hidden="true"></i> English</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Chinese</a>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Hindi</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Italian</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Select your preferred font</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark"><i class="fa fa-check" aria-hidden="true"></i> Helvetica</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Arial</a>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Tahoma</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Georgia</a>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Comic Sans</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Lato</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-chevron-up py-2" aria-hidden="true"> </i>
+  </button>
+
+
+  <!-- Side navigation -->
+  <div class="container-fluid">
+      <div class="row">
+          <aside class="col-1 d-none d-xl-block px-0 py-5 mt-5 fixed-top" id="left">
+          <div class="list-group w-100">
+            <a href="https://learn.uea.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_327_1" target="_blank"class="list-group-item bg-dark text-light">Blackboard</a>
+            <a href="https://evision.uea.ac.uk/urd/sits.urd/run/siw_portal.url?" target="_blank" class="list-group-item bg-dark text-light">e:Vision</a>
+            <a href="https://outlook.office.com/mail/inbox" target="_blank" class="list-group-item bg-dark text-light">Outlook</a>
+            <a href="https://www.uea.ac.uk/library" target="_blank" class="list-group-item bg-dark text-light">Library</a>
+            <a href="https://teams.microsoft.com/" target="_blank" class="list-group-item bg-dark text-light">Teams</a>
+            <a href="https://attendance.uea.ac.uk/api/me" target="_blank" class="list-group-item bg-dark text-light">Attendance</a>
+            <a href="https://mycareercentral.uea.ac.uk/" target="_blank" class="list-group-item bg-dark text-light">Career Central</a>
+            <a href="https://www.office.com/?auth=2&wa=wsignin1.0" target="_blank" class="list-group-item bg-dark text-light">Office 365</a>
+          </div>
+          </aside>
+    </div>
+  </div>
+
+
+
+  <!-- Covid-19 Notice -->
+<section id="Covid-19" class="py-0">
+<div class="container">
+  <div class="lead alert alert-warning alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+
+    <h4>Covid-19 Guidance:</h4>
+    <p></p>
+
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-sm py-2">
+          <a href="https://my.uea.ac.uk/covid-lateral-testing" target="_blank" class="list-group-item list-group-item-action list-group-item-warning">Rapid testing for students and staff</a>
+        </div>
+        <div class="col-sm py-2">
+          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=lYdfxj26UUOKBwhl5djwkGE-Vtss8BNCt273m--iAkhURFZHTjUzSDlENDkwNEs1S1NXOERJRjJGVyQlQCN0PWcu" target="_blank" class="list-group-item list-group-item-action list-group-item-warning">Self-isolation notification form</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center">
+    <div class="row">
+      <div class="col-sm py-2">
+        <a href="https://my.uea.ac.uk/documents/20142/3241028/Safety+First+-+COVID+Checklist.pdf/7b78b3bf-5751-6e96-714c-eb4fe8b72ff0?t=1600183785253" target="_blank" class="list-group-item list-group-item-action list-group-item-warning">Covid-19 symptom checklist</a>
+      </div>
+      <div class="col-sm py-2">
+        <a href="https://my.uea.ac.uk/divisions/student-and-academic-services/learning-and-teaching/students/covid-19" target="_blank" class="list-group-item list-group-item-action list-group-item-warning">Other Covid-19 resources</a>
+      </div>
+    </div>
+    </div>
+
+    </div>
+</div>
+</section>
+
+
+
+
+<!-- EVENT Section -->
+
+<section id="about" class="py-0">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-5">
+      <div class="container">
+
+      <h3 class=" display-4 text-primary ml-3 my-3 text-center">Events</h3>
+
+
+
+
+
+
+
+      <section id="showcase" class="bg-dark">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+          <ol class="carousel-indicators mb-0">
+            <li data-slide-to="0" data-target="#myCarousel" class="active"></li>
+            <li data-slide-to="1" data-target="#myCarousel"></li>
+            <li data-slide-to="2" data-target="#myCarousel"></li>
+          </ol>
+
+          <div class="carousel-inner">
+            <div class="carousel-item carousel-img-1 active">
+              <div class="container">
+                <div class="carousel-caption mb-1 pb-1 text-center">
+                  <a href="#" class="btn btn-outline-light">View Event</a>                    <p class="lead my-0 text-center">Showchoir Christmas Concert</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item carousel-img-2">
+              <div class="container">
+                <div class="carousel-caption mb-1 pb-1 text-center">
+                  <a href="#" class="btn btn-outline-light">View Event</a>
+                  <p class="lead my-0 text-center">Finnbar’s Christmas Lights</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item carousel-img-3">
+              <div class="container">
+                <div class="carousel-caption text-center text-light mb-1 pb-1">
+                  <a href="#" class="btn btn-outline-light">View Event</a>                    <p class="lead my-0 text-center">Virtual Panto</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#myCarousel" class="carousel-control-prev pb-1" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a href="#myCarousel" class="carousel-control-next pb-1" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </section>
+      <div class="mt-1 pull-right"><a href="#" class="text-dark">
+         All Events <i class="fa fa-angle-double-right"></i></a>
+      </div>
+      </div>
+      </div>
+
+
+
+
+      <div class="col-md-7">
+        <!--Accordion wrapper-->
+        <h3 class=" display-4 text-primary ml-3 my-3 text-center">Latest News </h3>
+        <div class="container">
+        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+          <!-- Accordion card -->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="headingOne1">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" class="nounderline" aria-expanded="true"
+                aria-controls="collapseOne1">
+                <h5 class="mb-0 text-dark">
+                  COVID-19 Update <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+              <div class="card-body">
+                Please read for an update on case numbers, a reminder on safety measures and what the University is doing to support students in self-isolation.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="heading2">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse2" class="nounderline" aria-expanded="true"
+                aria-controls="collapse2">
+                <h5 class="mb-0 text-dark">
+                  There's still time to book a rapid COVID test <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2" data-parent="#accordionEx">
+              <div class="card-body">
+                Tests are quick, simple and available until 9 Dec – watch SU Welfare Officer Em Anderson take you through the process.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="heading3">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse3" class="nounderline" aria-expanded="true"
+                aria-controls="collapse3">
+                <h5 class="mb-0 text-dark">
+                  Meet the staff keeping campus running <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3" data-parent="#accordionEx">
+              <div class="card-body">
+                The first in a series of videos celebrating the staff who have helped keep campus running in 2020 commemorates UEA’s cleaning staff. This is Dean Newton's story.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="heading4">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse4" class="nounderline" aria-expanded="true"
+                aria-controls="collapse4">
+                <h5 class="mb-0 text-dark">
+                  Tier 2 - what does it mean? <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx">
+              <div class="card-body">
+                Norwich is being placed into Tier 2 (High) restrictions from tomorrow [2 December] – learn more about what being in Tier 2 will mean.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="heading5">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse5" class="nounderline" aria-expanded="true"
+                aria-controls="collapse5">
+                <h5 class="mb-0 text-dark">
+                   Spotlight on accessing Wellbeing Services <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5" data-parent="#accordionEx">
+              <div class="card-body">
+                Now perhaps more than ever, it’s important that we prioritise our mental health. Read Pharmacy student Arj’s story of accessing Wellbeing services at UEA.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+          </div>
+          <div class="mt-1 pull-right"><a href="#" class="text-dark">
+             More News <i class="fa fa-angle-double-right"></i></a>
+          </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+
+
+
+
+
+
+  <!-- Frequently used services -->
+  <section id="icon-boxes" class="py-3 mt-3 text-center">
+    <h4 class="display-4 text-primary my-3">UEA Systems </h4>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-3">
+          <a href="https://learn.uea.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_327_1" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <i class="fa fa-pencil-square mb-3 text-dark"></i>
+              <h3>Blackboard</h3>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="https://evision.uea.ac.uk/urd/sits.urd/run/siw_portal.url?" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <i class="fa fa-etsy mb-3 text-success"></i>
+              <h3>e:Vision</h3>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="https://outlook.office.com/mail/inbox" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <i class="fa fa-envelope mb-3 text-info"></i>
+              <h3>Outlook</h3>
+            </div>
+          </div>
+          </a>
+        </div>
+
+
+        <div class="col-md-3">
+          <a href="https://www.uea.ac.uk/library" target="_blank" class="nounderline">
+          <div class="card">
+            <div class="card-body">
+              <i class="fa fa-book mb-3 text-secondary"></i>
+              <h3>Library</h3>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-3">
+          <a href="https://teams.microsoft.com/" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <i class="fa fa-users mb-3 text-primary"></i>
+              <h3>Teams</h3>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="https://attendance.uea.ac.uk/api/me" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <i class="fa fa-id-badge mb-3 text-danger"></i>
+              <h3>Attendance</h3>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="https://mycareercentral.uea.ac.uk/" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <i class="fa fa-copyright mb-3 text-warning"></i>
+              <h3>Career Central</h3>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="https://www.office.com/?auth=2&wa=wsignin1.0" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <i class="fa fa-file-word-o mb-3 text-primary"></i>
+              <h3>Office 365</h3>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- More services -->
+  <section id="icon-boxes" class="py-3 mt-3 text-left">
+    <h4 class="display-4 text-primary my-3 text-center">Faculties</h4>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card">
+            <div class="card-body">
+              <h4>Arts and Humanities</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Medicine and Health Sciences</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Science</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Social Science</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+  </section>
+
+  <section id="icon-boxes" class="py-3 mt-3 text-left">
+    <h4 class="display-4 text-primary my-3 text-center">Help me with</h4>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>IT Support</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Your IT Account</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Connecting to the VPN</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Policies and Regulations</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>UEA Jargon and Acronyms</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+
+  </section>
+
+
+
+
+  <section id="icon-boxes" class="py-3 mt-3 text-left">
+    <h4 class="display-4 text-primary my-3 text-center">Divisions and Services</h4>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Admissions Recruitment Marketing</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Development</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Estates</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Faculty Professional Services</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Finance</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Planning</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>It and Computing Services</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>People and Culture</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Research and Innovation</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Health and Safety Department</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Sport and Commercial Services</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Student and Academic Services</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+
+  <section id="icon-boxes" class="py-3 mt-3 text-left">
+    <h4 class="display-4 text-primary my-3 text-center">Communities</h4>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Resnet</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>RS Connect</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Retirement Association</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Staff Association</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+  <section id="icon-boxes" class="py-3 mt-3 text-left">
+    <h4 class="display-4 text-primary my-3 text-center">Other Services</h4>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>UEA Vacancies</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Directories</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Norwich Research Park</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Campus Map</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>My Wellbeing</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" target="_blank" class="nounderline">
+          <div class="card ">
+            <div class="card-body">
+              <h4>Ryze App</h4>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+
+  <footer id="copyright" class="py-2 text-light text-center mt-5">
+      <div class="row">
+        <div class="col-12">
+          <img src="img/tef.png" class="py-2" alt="TEF Achivement">
+          <p class="lead mb-0">&copy; UEA. All rights reserved. University of East Anglia, Norwich Research Park, Norwich Norfolk, NR4 7TJ, UK | +44 (0) 1603 456161</p>
+        </div>
+      </div>
+  </footer>
+
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/top.js"></script>
+</body>
+</html>

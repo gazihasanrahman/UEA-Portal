@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/uikit.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="img/icon.png">
+  <title>My Dashboard</title>
+</head>
+<body>
+
+
+ <!-- Navigation -->
+ <nav class="navbar navbar-dark navbar-expand-md" uk-sticky="top: 200; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+   <div class="container">
+     <a href="index.html" class="navbar-brand font-weight-bold"><img src="img/logo.png" class="img-fluid w-25" alt="UEA Logo"> MY UEA</a>
+     <div class="nav-item py-1">
+         <div class="input-group">
+          <form class="form-inline">
+              <input class="form-control " type="text" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+     </div>
+     <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div id="navbarNav" class="collapse navbar-collapse">
+       <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+           <a class="nav-link" href="index.html">Home</a>
+         </li>
+         <li class="nav-item active">
+           <a class="nav-link" href="myschool.html">My School</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="covid19.html">COVID-19</a>
+         </li>
+
+        <!-- Navbar dropdown -->
+         <li class="nav-item dropdown">
+           <a href="javascript:void(0)" class="nav-link dropdown-toggle"  data-toggle="dropdown"
+           role="button"
+           aria-expanded="false">Accessibility<span class="caret"></span>
+         </a>
+           <ul class="dropdown-menu" role="menu">
+
+            <li>
+            <div class="dropdown-item">
+            <a class="btn"><i class="fa fa-search-minus"></i></a>
+            <a class="btn">Zoom</a>
+            <a class="btn"><i class="fa fa-search-plus"></i></a>
+            </div>
+            </li>
+
+             <li><a class="dropdown-item" href="#">Dark theme  <i class="fa fa-toggle-off mt-2 pull-right"></i></a></li>
+             <li><hr class="dropdown-divider" /></li>
+             <li><a class="dropdown-item" data-toggle="modal" data-target="#Modal1">Language <i class="fa fa-language mt-2 pull-right"></i></a></li>
+             <li><a class="dropdown-item" href="#">Recite<i class="fa fa-volume-up mt-2 pull-right"></i></a></li>
+             <li><a class="dropdown-item" data-toggle="modal" data-target="#Modal2">Change font <i class="fa fa-font mt-2 pull-right"></i></a></li>
+           </ul>
+         </li>
+
+
+
+         <li class="dropdown order-1">
+           <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary"><h4><i class="fa fa-user-circle"></i></h4> <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right mt-1">
+                       <li class="px-3 ">
+                           <form class="form" role="form">
+                                <div class="form-group">
+                                    <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-dark btn-block">Login</button>
+                                </div>
+                                <div class="form-group text-center">
+                                    <small><a href="#" class="text-dark">Forgot password?</a></small>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+
+       </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Select your Language</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark"><i class="fa fa-check" aria-hidden="true"></i> English</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Chinese</a>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Hindi</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Italian</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Select your preferred font</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark"><i class="fa fa-check" aria-hidden="true"></i> Helvetica</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Arial</a>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Tahoma</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Georgia</a>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Comic Sans</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Lato</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-chevron-up py-2" aria-hidden="true"> </i>
+  </button>
+
+
+  <!-- Side navigation -->
+  <div class="container-fluid">
+      <div class="row">
+          <aside class="col-1 d-none d-xl-block px-0 py-5 mt-5 fixed-top" id="left">
+          <div class="list-group w-100">
+            <a href="https://learn.uea.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_327_1" target="_blank"class="list-group-item bg-dark text-light">Blackboard</a>
+            <a href="https://evision.uea.ac.uk/urd/sits.urd/run/siw_portal.url?" target="_blank" class="list-group-item bg-dark text-light">e:Vision</a>
+            <a href="https://outlook.office.com/mail/inbox" target="_blank" class="list-group-item bg-dark text-light">Outlook</a>
+            <a href="https://www.uea.ac.uk/library" target="_blank" class="list-group-item bg-dark text-light">Library</a>
+            <a href="https://teams.microsoft.com/" target="_blank" class="list-group-item bg-dark text-light">Teams</a>
+            <a href="https://attendance.uea.ac.uk/api/me" target="_blank" class="list-group-item bg-dark text-light">Attendance</a>
+            <a href="https://mycareercentral.uea.ac.uk/" target="_blank" class="list-group-item bg-dark text-light">Career Central</a>
+            <a href="https://www.office.com/?auth=2&wa=wsignin1.0" target="_blank" class="list-group-item bg-dark text-light">Office 365</a>
+          </div>
+          </aside>
+    </div>
+  </div>
+
+
+
+  <!-- Welcome -->
+
+
+  <div class="container">
+
+    <section id="welcome" class="py-3 text-center">
+      <h4 class="display-4 text-primary my-1 text-center">School of Computing Sciences</h4>
+      <p class="text-justify lead mb-3">For more than 40 years we have been recognised internationally for excellence in our teaching, research and enterprise. We are very aware of the needs of industry and this is reflected in the development and application-led focus of our courses and research. We pride ourselves in giving all our students the necessary mentoring, support and skills to enable them to gain rewarding and high quality jobs. We are experts in areas such as Graphics Vision and Speech Analysis; Colour; Computational Biology; Data Science; Artificial Intelligence and growing focus on Cloud Computing/Virtualisation, Internet Technologies and Cyber Security. </p>
+    </section>
+
+
+
+    <!-- Important sections -->
+
+      <section id="icon-boxes" class="py-0 mt-0 text-left">
+        <h4 class="display-4 text-primary my-3 text-center">Important Sections</h4>
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-graduation-cap px-3 text-dark" aria-hidden="true"></i> Undergraduate</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-graduation-cap px-3 text-dark" aria-hidden="true"></i> Postgraduate</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+
+          </div>
+
+          <div class="row mt-4">
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-handshake-o px-3 text-dark" aria-hidden="true"></i>
+ Learning Help</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-graduation-cap px-3 text-dark" aria-hidden="true"></i>
+Research</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+          </div>
+
+
+
+          <div class="row mt-4">
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-address-card px-3 text-dark" aria-hidden="true"></i> Job Opportunity</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-medkit px-3 text-dark" aria-hidden="true"></i> Health & Safety</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+          </div>
+
+          <div class="row mt-4">
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-shield px-3 text-dark" aria-hidden="true"></i> Science Faculty HR Support</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-university px-3 text-dark" aria-hidden="true"></i> Our Inclusive Environment</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+          </div>
+
+          <div class="row mt-4">
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-trophy px-3 text-dark" aria-hidden="true"></i> Prizes</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a href="#" target="_blank" class="nounderline">
+              <div class="card ">
+                <div class="card-body">
+                  <h4><i class="fa fa-graduation-cap px-3 text-dark" aria-hidden="true"></i> Post Research Day</h4>
+                </div>
+              </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+
+
+
+
+
+    <!-- Teachers -->
+    <section id="teachers" class="text-center py-2 mt-3">
+      <div class="container">
+        <div class="row equal">
+          <div class="col-12 ">
+            <div class="info-teachers mb-2 pb-3">
+              <h2 class="display-4 text-primary">Meet our team of experts</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row equal my-5">
+          <div class="col-lg-3 col-md-6 col-sm-12 d-flex pb-3">
+            <div class="card card-block">
+              <div class="card-body">
+                <img src="img/gerard.png" class="img-fluid rounded-circle w-50 mb-3" alt="Susan Williams">
+                <h3 >Prof Gerard Parr</h3>
+                <p class="lead">Head of School and Director of Employability</p>
+                <div class="d-flex flex-row justify-content-center ">
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-facebook text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-twitter text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-linkedin text-dark"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 d-flex pb-3">
+            <div class="card card-block">
+              <div class="card-body">
+                <img src="img/andy.png" class="img-fluid rounded-circle w-50 mb-3" alt="Susan Williams">
+                <h3 >Prof Andy Day</h3>
+                <p class="lead">Deputy Head of School</p>
+                <p class="lead text-light">. </p>
+                <div class="d-flex flex-row justify-content-center">
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-facebook text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-twitter text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-linkedin text-dark"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 d-flex pb-3">
+            <div class="card card-block">
+              <div class="card-body">
+                <img src="img/dan.png" class="img-fluid rounded-circle w-50 mb-3" alt="Susan Williams">
+                <h3>Dr Dan Smith</h3>
+                <p class="lead">Director of Learning and Teaching</p>
+                <div class="d-flex flex-row justify-content-center">
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-facebook text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-twitter text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-linkedin text-dark"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 d-flex pb-3">
+            <div class="card card-block">
+              <div class="card-body">
+                <img src="img/beatris.png" class="img-fluid rounded-circle w-50 mb-3" alt="Susan Williams">
+                <h3>Dr Beatriz de la Iglesia</h3>
+                <p class="lead">Director of Postgraduate Taught Programmes</p>
+                <div class="d-flex flex-row justify-content-center">
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-facebook text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-twitter text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-linkedin text-dark"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row equal my-4">
+          <div class="col-lg-3 col-md-6 col-sm-12 d-flex pb-3">
+            <div class="card card-block">
+              <div class="card-body">
+                <img src="img/james.png" class="img-fluid rounded-circle w-50 mb-3" alt="Susan Williams">
+                <h3 >Dr James Mapp</h3>
+                <p class="lead">Attendance Officer</p>
+                <p class="lead text-light">. </p>
+                <div class="d-flex flex-row justify-content-center">
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-facebook text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-twitter text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-linkedin text-dark"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 d-flex pb-3">
+            <div class="card card-block">
+              <div class="card-body">
+                <img src="img/pierre.png" class="img-fluid rounded-circle w-50 mb-3" alt="Susan Williams">
+                <h3 >Dr Pierre Chardaire</h3>
+                <p class="lead">Senior Advisor</p>
+                <p class="lead text-light">. </p>
+                <div class="d-flex flex-row justify-content-center">
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-facebook text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-twitter text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-linkedin text-dark"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 d-flex pb-3">
+            <div class="card card-block">
+              <div class="card-body">
+                <img src="img/Elena.png" class="img-fluid rounded-circle w-50 mb-3" alt="Susan Williams">
+                <h3>Prof Elena Kulinskaya</h3>
+                <p class="lead">Director of Equality and Diversity</p>
+                <div class="d-flex flex-row justify-content-center">
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-facebook text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-twitter text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-linkedin text-dark"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 d-flex pb-3">
+            <div class="card card-block">
+              <div class="card-body">
+                <img src="img/vincent.png" class="img-fluid rounded-circle w-50 mb-3" alt="Susan Williams">
+                <h3>Prof Vincent Moulton</h3>
+                <p class="lead">Director of Research</p>
+                <div class="d-flex flex-row justify-content-center">
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-facebook text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-twitter text-dark"></i></a>
+                  </div>
+                  <div class="p-4">
+                    <a href="#"><i class="fa fa-linkedin text-dark"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- Programmes Offered -->
+    <section id="icon-boxes" class="py-3 mt-3 text-left">
+      <h4 class="display-4 text-primary my-3 text-center">Programmes offered</h4>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6">
+            <a href="https://www.uea.ac.uk/course/postgraduate/msc-advanced-computing-science" target="_blank" class="nounderline">
+            <div class="card">
+              <div class="card-body">
+                <h4>Advanced Computing Science</h4>
+              </div>
+            </div>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a href="https://www.uea.ac.uk/course/postgraduate/msc-cyber-security" target="_blank" class="nounderline">
+            <div class="card ">
+              <div class="card-body">
+                <h4>Cyber Security</h4>
+              </div>
+            </div>
+            </a>
+          </div>
+
+
+        </div>
+
+        <div class="row mt-4">
+
+          <div class="col-md-6">
+            <a href="https://www.uea.ac.uk/course/postgraduate/msc-data-science" target="_blank" class="nounderline">
+            <div class="card ">
+              <div class="card-body">
+                <h4>Cyber Security</h4>
+              </div>
+            </div>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a href="https://www.uea.ac.uk/course/postgraduate/msc-computing-science" target="_blank" class="nounderline">
+            <div class="card ">
+              <div class="card-body">
+                <h4>Computing Science</h4>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Study Plan -->
+
+    <section id="stdy-Plan" class="py-2 mt-2 text-center">
+      <h4 class="display-4 text-primary my-3">Study plan</h4>
+      <div class="container">
+        <div class="row equal">
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" colspan="2" class="text-center bg-dark text-light">Semester-1</th>
+          <th scope="col" colspan="2" class="text-center bg-dark text-light">Semester-2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">Week-01</td>
+          <td rowspan="2" class="pt-4 text-center"><h5 class="text-muted">Teaching</h5></td>
+          <td class="text-center">Week-21</td>
+          <td rowspan="2" class="pt-4 text-center"><h5 class="text-muted">Teaching</h5></td>
+        </tr>
+        <tr>
+          <td class="text-center">Week-13</td>
+          <td class="text-center">Week-22</td>
+        </tr>
+        <tr>
+          <td class="text-center">Week-14</td>
+          <td class="text-center">Submissions</td>
+          <td class="text-center">Week-36</td>
+          <td class="text-center">Submissions</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center">Break & Assessments</td>
+          <td colspan="2" class="text-center">Break & Assessments</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Seminar Section -->
+
+<section id="about" class="py-0">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-5">
+      <div class="container">
+
+      <h3 class=" display-4 text-primary ml-3 my-3 text-center">Seminars</h3>
+
+
+
+
+
+
+
+      <section id="showcase" class="bg-dark">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+          <ol class="carousel-indicators mb-0">
+            <li data-slide-to="0" data-target="#myCarousel" class="active"></li>
+            <li data-slide-to="1" data-target="#myCarousel"></li>
+            <li data-slide-to="2" data-target="#myCarousel"></li>
+          </ol>
+
+          <div class="carousel-inner">
+            <div class="carousel-item carousel-img-4 active">
+              <div class="container">
+                <div class="carousel-caption mb-1 pb-1 text-center">
+                  <a href="#" class="btn btn-outline-light">View Seminar</a>
+                  <p class="lead my-0 text-center">Decolonising COVID</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item carousel-img-5">
+              <div class="container">
+                <div class="carousel-caption mb-1 pb-1 text-center">
+                  <a href="#" class="btn btn-outline-dark text-dark">View Seminar</a>
+                  <p class="lead my-0 text-center text-dark">Findings From COVID-19</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item carousel-img-6">
+              <div class="container">
+                <div class="carousel-caption text-center text-light mb-1 pb-1">
+                  <a href="#" class="btn btn-outline-light">View Seminar</a>
+                  <p class="lead my-0 text-center">HSC Placement Innovations</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#myCarousel" class="carousel-control-prev pb-1" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a href="#myCarousel" class="carousel-control-next pb-1" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </section>
+      <div class="mt-1 pull-right"><a href="#" class="text-dark">
+         All Seminars <i class="fa fa-angle-double-right"></i></a>
+      </div>
+      </div>
+      </div>
+
+
+
+
+      <div class="col-md-7">
+        <!--Accordion wrapper-->
+        <h3 class=" display-4 text-primary ml-3 my-3 text-center">CMP News</h3>
+        <div class="container">
+        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+          <!-- Accordion card -->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="headingOne1">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" class="nounderline" aria-expanded="true"
+                aria-controls="collapseOne1">
+                <h5 class="mb-0 text-dark">
+                  UEA joins national campaign to boost number of women in science and engineering <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+              <div class="card-body">
+                Leading female academics welcome University’s membership of a national women in science network.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="heading2">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse2" class="nounderline" aria-expanded="true"
+                aria-controls="collapse2">
+                <h5 class="mb-0 text-dark">
+                  UK Research and Innovation Future Leaders Fellowships at UEA <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2" data-parent="#accordionEx">
+              <div class="card-body">
+                The UKRI Fellowships provide an exciting opportunity for early career researchers from anywhere in the world. We aim to nominate a number of applicants across Science for the UKRI Future Leaders Fellowship Scheme and have opened our call for Round 6 applicants.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="heading3">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse3" class="nounderline" aria-expanded="true"
+                aria-controls="collapse3">
+                <h5 class="mb-0 text-dark">
+                  New Science Building opened <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3" data-parent="#accordionEx">
+              <div class="card-body">
+                The new science building is opened after lockdown with al sasfety measures.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="heading4">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse4" class="nounderline" aria-expanded="true"
+                aria-controls="collapse4">
+                <h5 class="mb-0 text-dark">
+                  2,000 new computers installed. <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx">
+              <div class="card-body">
+                The latest Sixth generation fast speed computers have been installed for the upcoming batch of 2020.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="heading5">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse5" class="nounderline" aria-expanded="true"
+                aria-controls="collapse5">
+                <h5 class="mb-0 text-dark">
+                   Computer Science Student of the year award <i class="fa fa-sort-desc pull-right"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5" data-parent="#accordionEx">
+              <div class="card-body">
+                Congratulate Mr. Sneh for getting the prestegious computer science student of the year award.
+                <a href="#" class="text-dark"><u> Details</u></a>
+              </div>
+            </div>
+          </div>
+          <div class="mt-1 pull-right"><a href="#" class="text-dark">
+             More News <i class="fa fa-angle-double-right"></i></a>
+          </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- School Contacts -->
+
+    <section id="contact" class="py-2 mt-2 text-center">
+    <h4 class="display-4 text-primary my-3">Key school contacts</h4>
+    <div class="container">
+      <div class="row equal">
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="text-center bg-dark text-light">Role</th>
+        <th class="text-center bg-dark text-light">Name</th>
+        <th class="text-center bg-dark text-light">E-mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center">Head of School PA	</td>
+        <td class="text-center">Tony Isherwood</td>
+        <td class="text-center">A.Isherwood@uea.ac.uk</td>
+      </tr>
+      <tr>
+        <td class="text-center">Faculty Professional Services Office	</td>
+        <td class="text-center">N/A</td>
+        <td class="text-center">CMPMTH.FPS@uea.ac.uk</td>
+      </tr>
+      <tr>
+        <td class="text-center">CMP Support	</td>
+        <td class="text-center">N/A	</td>
+        <td class="text-center">Wcmp_support@uea.ac.uk</td>
+      </tr>
+      <tr>
+        <td class="text-center">Information for Bulletins	</td>
+        <td class="text-center">N/A	</td>
+        <td class="text-center">CMPMTH.Bulletin@uea.ac.uk</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</section>
+
+</div>
+
+
+
+
+
+    <!-- Footer -->
+
+    <footer id="copyright" class="py-2 text-light text-center mt-5">
+        <div class="row">
+          <div class="col-12">
+            <img src="img/tef.png" class="py-2" alt="TEF Achivement">
+            <p class="lead mb-0">&copy; UEA. All rights reserved. University of East Anglia, Norwich Research Park, Norwich Norfolk, NR4 7TJ, UK | +44 (0) 1603 456161</p>
+          </div>
+        </div>
+    </footer>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/top.js"></script>
+  </body>
+  </html>

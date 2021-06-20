@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/uikit.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="img/icon.png">
+  <title>My Dashboard</title>
+</head>
+<body>
+
+
+ <!-- Navigation -->
+ <nav class="navbar navbar-dark navbar-expand-md" uk-sticky="top: 200; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+   <div class="container">
+     <a href="index.html" class="navbar-brand font-weight-bold"><img src="img/logo.png" class="img-fluid w-25" alt="UEA Logo"> MY UEA</a>
+     <div class="nav-item py-1">
+         <div class="input-group">
+          <form class="form-inline">
+              <input class="form-control " type="text" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+     </div>
+     <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div id="navbarNav" class="collapse navbar-collapse">
+       <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+           <a class="nav-link" href="index.html">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="myschool.html">My School</a>
+         </li>
+         <li class="nav-item active">
+           <a class="nav-link" href="covid19.html">COVID-19</a>
+         </li>
+
+        <!-- Navbar dropdown -->
+         <li class="nav-item dropdown">
+           <a href="javascript:void(0)" class="nav-link dropdown-toggle"  data-toggle="dropdown"
+           role="button"
+           aria-expanded="false">Accessibility<span class="caret"></span>
+         </a>
+           <ul class="dropdown-menu" role="menu">
+
+            <li>
+            <div class="dropdown-item">
+            <a class="btn"><i class="fa fa-search-minus"></i></a>
+            <a class="btn">Zoom</a>
+            <a class="btn"><i class="fa fa-search-plus"></i></a>
+            </div>
+            </li>
+
+             <li><a class="dropdown-item" href="#">Dark theme  <i class="fa fa-toggle-off mt-2 pull-right"></i></a></li>
+             <li><hr class="dropdown-divider" /></li>
+             <li><a class="dropdown-item" data-toggle="modal" data-target="#Modal1">Language <i class="fa fa-language mt-2 pull-right"></i></a></li>
+             <li><a class="dropdown-item" href="#">Recite<i class="fa fa-volume-up mt-2 pull-right"></i></a></li>
+             <li><a class="dropdown-item" data-toggle="modal" data-target="#Modal2">Change font <i class="fa fa-font mt-2 pull-right"></i></a></li>
+           </ul>
+         </li>
+
+
+
+         <li class="dropdown order-1">
+           <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary"><h4><i class="fa fa-user-circle"></i></h4> <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right mt-1">
+                       <li class="px-3">
+                           <form class="form" role="form">
+                                <div class="form-group">
+                                    <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-dark btn-block">Login</button>
+                                </div>
+                                <div class="form-group text-center">
+                                    <small><a href="#" class="text-dark">Forgot password?</a></small>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+
+       </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Select your Language</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark"><i class="fa fa-check" aria-hidden="true"></i> English</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Chinese</a>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Hindi</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Italian</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Select your preferred font</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark"><i class="fa fa-check" aria-hidden="true"></i> Helvetica</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Arial</a>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Tahoma</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Georgia</a>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Comic Sans</a>
+              </div>
+              <div class="col-sm py-2">
+                <a href="#" class="list-group-item list-group-item-action list-group-item">Lato</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-chevron-up py-2" aria-hidden="true"> </i>
+  </button>
+
+
+  <!-- Side navigation -->
+  <div class="container-fluid">
+      <div class="row">
+          <aside class="col-1 d-none d-xl-block px-0 py-5 mt-5 fixed-top" id="left">
+          <div class="list-group w-100">
+            <a href="https://learn.uea.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_327_1" target="_blank"class="list-group-item bg-dark text-light">Blackboard</a>
+            <a href="https://evision.uea.ac.uk/urd/sits.urd/run/siw_portal.url?" target="_blank" class="list-group-item bg-dark text-light">e:Vision</a>
+            <a href="https://outlook.office.com/mail/inbox" target="_blank" class="list-group-item bg-dark text-light">Outlook</a>
+            <a href="https://www.uea.ac.uk/library" target="_blank" class="list-group-item bg-dark text-light">Library</a>
+            <a href="https://teams.microsoft.com/" target="_blank" class="list-group-item bg-dark text-light">Teams</a>
+            <a href="https://attendance.uea.ac.uk/api/me" target="_blank" class="list-group-item bg-dark text-light">Attendance</a>
+            <a href="https://mycareercentral.uea.ac.uk/" target="_blank" class="list-group-item bg-dark text-light">Career Central</a>
+            <a href="https://www.office.com/?auth=2&wa=wsignin1.0" target="_blank" class="list-group-item bg-dark text-light">Office 365</a>
+          </div>
+          </aside>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+  <h4 class="display-4 text-primary my-3 text-center"> COVID-19 </h4>
+      <h5 class="display-4 text-primary my-3 text-center text-danger">Important</h5>
+      <div class="alert alert-danger" role="alert">
+          This page contains <a class="alert-link"> important information and useful advice </a> in terms of covid-19 pandemic for students and staff.
+          In addition, some information as regards to significant task such as <a class="alert-link"> testing, self-isolation and safety measures </a> across the UEA can be reached.
+          Please read them all <a class="alert-link"> carefully</a>.
+      </div>
+      <h2 class="Covid cases Title" > Covid Cases and Testing System at the University of East Anglia</h2>
+      <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width:350px">
+                  <a><img class="card-img-top img-ro" src="img\CovidCases.jfif" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a>Covid-19 Cases Dashboard <a class="alert-link text-danger">(Updated on 17.12.2020)</a> </a>
+                      </h4>
+                      <p class="card-text text-danger">Current Covid-19 Cases at the University Of East Anglia can be found here.</p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width:350px">
+                  <a href="#"><img class="card-img-top" src="img\NHS.jpg" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a>NHS Covid-19 Test <a class="alert-link text-danger">(Symptom Required) </a> </a>
+                      </h4>
+                      <p class="card-text text-danger">If you want to get this test please note that you have to have a symptom </p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width: 350px" >
+                  <a><img class="card-img-top" src="img\UEA.png" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a>UEA Covid-19 Test<a class="alert-link text-danger">(Asymptomatic) </a> </a>
+                      </h4>
+                      <p class="card-text text-danger">In order to stop the silence spread of covid, please help us </p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <h2 class="Latest Update Title" > Latest Update </h2>
+      <div class="alert alert-danger" role="alert">
+          The <a class="alert-link">latest update</a> for <a class="alert-link"> staff and students </a> can be found here regarding Covid-19
+      </div>
+      <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="card" style="width: 350px">
+              <a><img class="img-fluid" src="img\Staff.jpg" alt="Card image"></a>
+              <div class="card-body">
+                  <h4 class="card-title">
+                      <a> Staff </a>
+                  </h4>
+                  <p class="card-text text-info"> Advice for all UEA staff regarding Covid-19 </p>
+                  <div class="card-footer">
+                      <button type="button" class="btn btn-info">Find out more</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="card" style="width: 350px">
+              <a><img src="img\Students.jpg" alt="Card image"></a>
+              <div class="card-body">
+                  <h4 class="card-title">
+                      <a> Students</a>
+                  </h4>
+                  <p class="card-text text-info"> Advice for all UEA Students regarding Covid-19 </p>
+                  <div class="card-footer">
+                      <button type="button" class="btn btn-info">Find out more</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+          <h2 class="Self Isolation Support" > Self-Isolation Support </h2>
+          <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width: 350px">
+              <a><img src="img\MentalHealth.jpg" alt="Card image"></a>
+              <div class="card-body">
+                  <h4 class="card-title">
+                      <a> Mental Health </a>
+                  </h4>
+                  <p class="card-text text-info"> Please tell us any problem or issue you have. We are here to help you </p>
+                  <div class="card-footer">
+                      <button type="button" class="btn btn-info">Find out more</button>
+                  </div>
+              </div>
+          </div>
+          </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <div class="card" style="width: 350px">
+                      <a><img src="img\FoodBeddignCleaning.jpg" alt="Card image"></a>
+                      <div class="card-body">
+                          <h4 class="card-title">
+                              <a> Food & Cleaning & Bedding </a>
+                          </h4>
+                          <p class="card-text text-info"> During your self-isolation period, we are going to provide you food </p>
+                          <div class="card-footer">
+                              <button type="button" class="btn btn-info">Find out more</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <div class="card" style="width: 350px">
+                      <a><img src="img\OnlineLearning.jpg" alt="Card image"></a>
+                      <div class="card-body">
+                          <h4 class="card-title">
+                              <a> Online Learning </a>
+                          </h4>
+                          <p class="card-text text-info"> You are going to be supported by the UEA While you are in quarantine </p>
+                          <div class="card-footer">
+                              <button type="button" class="btn btn-info">Find out more</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      </div>
+      <h2 class="Protection From Covid-19" > Protection From Covid-19 </h2>
+      <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width: 350px">
+                  <a><img src="img\SafetyFirstVideo.jpg" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a> Safety First Video </a>
+                      </h4>
+                      <p class="card-text text-info"> Please watch the safety first video in order to keep yourself and others safe </p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width: 350px">
+                  <a><img src="img\CovidChecklist.jpg" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a> Covid-19 Checklist </a>
+                      </h4>
+                      <p class="card-text text-info"> Please make sure that you stick the rules in order to avoid from the virus </p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width: 350px">
+                  <a><img src="img\SafetyGuidance.jpg" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a> Safety Guidance </a>
+                      </h4>
+                      <p class="card-text text-info"> Wear your mask, Maintain the social distancing and wash your hands </p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </div>
+      <h2 class="Covid cases Title" > Government Guidelines for Covid-19</h2>
+      <div class="row">
+          <div class="alert alert-danger" role="alert">
+              This section include <a class="alert-link"> the UK Government's precautions </a> for Covid-19. According to that, Univeristy of East Anglia also <a class="alert-link">follows the government's advice </a>
+              Whilst your stay at UEA, we <a class="alert-link">highly recommend</a> you to obey the rules for your and others safety.
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width: 350px">
+                  <a><img src="img\GOVUK.png" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a> Government Advice </a>
+                      </h4>
+                      <p class="card-text text-info"> Wear mask, maintain the social distancing and wash your hands </p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <h2 class="EmergencyContacts" > Emergency Contacts </h2>
+      <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width: 350px">
+                  <a><img src="img\Hospital.jpg" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a> Hospital </a>
+                      </h4>
+                      <p class="card-text text-info"> Please contact hospital immediately, If you fell unwell </p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width: 350px">
+                  <a><img src="img\UEA.png" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a> UEA Medical Services </a>
+                      </h4>
+                      <p class="card-text text-info"> UEA Medical Services are here to support you </p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="card" style="width: 350px" >
+                  <a><img src="img\UEASupportServices.jpg" alt="Card image"></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a> UEA Support Services </a>
+                      </h4>
+                      <p class="card-text text-info"> We will be delighted to help you during your stay at UEA </p>
+                      <div class="card-footer">
+                          <button type="button" class="btn btn-info">Find out more</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </div>
+</div>
+
+  <!-- Footer -->
+
+  <footer id="copyright" class="py-2 text-light text-center mt-5">
+      <div class="row">
+        <div class="col-12">
+          <img src="img/tef.png" class="py-2" alt="TEF Achivement">
+          <p class="lead mb-0">&copy; UEA. All rights reserved. University of East Anglia, Norwich Research Park, Norwich Norfolk, NR4 7TJ, UK | +44 (0) 1603 456161</p>
+        </div>
+      </div>
+  </footer>
+
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/top.js"></script>
+</body>
+</html>
